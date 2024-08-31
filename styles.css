@@ -1,0 +1,220 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#search-bar {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.note-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align notes in each row */
+    gap: 20px;
+}
+
+.note {
+    background-color: #fff;
+    width: calc(25% - 20px); /* Adjust width to fit 4 notes per line with gap */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    min-width: 200px; /* Optional: Ensures a minimum width for notes */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .note {
+        width: calc(33.33% - 20px); /* Adjust for smaller screens, e.g., 3 notes per line */
+    }
+}
+
+@media (max-width: 800px) {
+    .note {
+        width: calc(50% - 20px); /* Adjust for even smaller screens, e.g., 2 notes per line */
+    }
+}
+
+@media (max-width: 500px) {
+    .note {
+        width: calc(100% - 20px); /* Adjust for very small screens, e.g., 1 note per line */
+    }
+}
+
+.add-note-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.note-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.note-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.note-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333; /* Default color for light mode */
+}
+
+.note-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.note-form input, .note-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.note-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.note-form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-actions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.note-actions .delete-note {
+    background-color: #d9534f;
+}
+
+.note-popup .popup-quit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-mode .note {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+.dark-mode .note-form {
+    background-color: #555;
+    color: #f4f4f4;
+    border: 1px solid #666;
+}
+
+.dark-mode .note-form h2 {
+    color: #fff; /* White color for dark mode */
+}
+
+.dark-mode .note-actions button {
+    background-color: #0069d9;
+}
+
+.dark-mode .note-actions .delete-note {
+    background-color: #c82333;
+}
