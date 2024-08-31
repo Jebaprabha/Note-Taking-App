@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="heading">Your Note Taker</h1>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+    <main>
+        <input type="text" id="search-bar" placeholder="Search notes...">
+        <section class="note-list" id="note-list">
+            <!-- Notes will be dynamically added here -->
+            <p id="no-notes-message" style="display: none; text-align: center; width: 100%;">No notes found</p>
+        </section>
+        
+        <div class="add-note-btn" id="add-note-btn">+</div>
+        <div class="note-popup" id="note-popup">
+            <div class="note-form">
+                <button id="popup-quit-btn" class="popup-quit-btn">×</button>
+                <h2 id="form-heading">Add a New Note</h2>
+                <label for="popup-note-title">Title</label>
+                <input type="text" id="popup-note-title" placeholder="Enter the title">
+                <label for="popup-note-content">Description</label>
+                <textarea id="popup-note-content" placeholder="Write your note here..."></textarea>
+                <button id="popup-add-btn">Add Note</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
